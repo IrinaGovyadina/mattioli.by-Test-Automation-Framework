@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>by.sportpari</groupId>
-    <artifactId>project-sportpari.by-web-tests-selenium</artifactId>
+    <groupId>by.mattioli</groupId>
+    <artifactId>mattioli.by-Test-Automation-Framework</artifactId>
     <version>1.0.0</version>
 
     <properties>
