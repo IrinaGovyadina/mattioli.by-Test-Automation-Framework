@@ -1,1 +1,2 @@
-# mattioli.by-Test-Automation-Framework
+Учебный проект по автоматизации тестирования сайта mattioli.by включающий реализацию UI и API.
+Автор: Говядина Ирина
