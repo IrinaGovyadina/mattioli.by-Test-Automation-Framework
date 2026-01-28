@@ -11,14 +11,15 @@ public class Driver {
     }
 
     public static WebDriver getDriver() {
-        if (driver == null){
+        if (driver == null) {
             driver = new ChromeDriver();
+            driver.manage().window().maximize();
         }
         return driver;
     }
 
-    public static void quit(){
-        if (driver != null){
+    public static void quit() {
+        if (driver != null) {
             driver.quit();
             driver = null;
         }
