@@ -18,17 +18,27 @@ public class LoginTest {
         homePage.open();
         homePage.clickCookie();
         homePage.clickEnter();
+        loginPage = new LoginPage();
     }
 
     @Test
     public void testLoginForm() {
-        loginPage = new LoginPage();
         loginPage.clickOnLoginWithPassword();
         loginPage.inputEmail("test@test.com");
         loginPage.inputPassword("987456");
         loginPage.putButtonEnter();
         loginPage.getErrorMessage();
         Assertions.assertEquals("Неверно указан телефон, логин, email или пароль", loginPage.getErrorMessage());
+    }
+
+    @Test
+    public void testLoginFormEmpty(){
+        loginPage.clickOnLoginWithPassword();
+        loginPage.inputEmail("");
+        loginPage.inputPassword("");
+        loginPage.putButtonEnter();
+        loginPage.getErrorMessage();
+        Assertions.assertEquals("Не указан телефон, логин или email", loginPage.getErrorMessage());
     }
 
     @AfterEach
