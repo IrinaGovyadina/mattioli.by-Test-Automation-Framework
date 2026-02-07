@@ -6,7 +6,6 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 
 
-
 public class HomePage {
     private static final Logger logger = LogManager.getLogger();
 
