@@ -12,7 +12,7 @@ public class SearchTestAPI {
     private static final Logger logger = LogManager.getLogger();
 
     @Test
-    public void testSearch() {
+    public void testSearchBar() {
         SearchService searchService = new SearchService();
         logger.info("Выполняется поиск по запросу:'015'");
         searchService.doRequest("015");
