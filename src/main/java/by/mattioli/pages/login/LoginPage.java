@@ -1,6 +1,8 @@
 package by.mattioli.pages.login;
 
 import by.mattioli.driver.Driver;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -9,6 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class LoginPage {
+   private static final Logger logger = LogManager.getLogger();
     private WebDriver driver;
 
     public LoginPage() {
@@ -21,10 +24,12 @@ public class LoginPage {
 
     public void inputEmail(String email) {
         driver.findElement(LoginLocator.EMAIL_PATH).sendKeys(email);
+        logger.info("Вводим данные почты");
     }
 
     public void inputPassword(String password) {
         driver.findElement(LoginLocator.PASSWORD_PATH).sendKeys(password);
+        logger.info("Вводим данные пароля");
     }
 
     public void putButtonEnter() {
@@ -34,6 +39,7 @@ public class LoginPage {
     public String getErrorMessage() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(LoginLocator.ERROR_MESSAGE_PATH));
+        logger.info("Выводится сообщение об ошибке");
         return element.getText();
     }
 }

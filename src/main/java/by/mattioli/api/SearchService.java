@@ -11,17 +11,18 @@ public class SearchService {
     private final String URL_SEARCH = "https://mattioli.by/";
     private Response response;
 
-    private Map<String, String> getQueryParams() {
+    private Map<String, String> getQueryParams(String query) {
         Map<String, String> queryParams = new HashMap<>();
         queryParams.put("c", "slam%3Asearch.elastic");
         queryParams.put("action", "ajaxSearch");
         queryParams.put("mode", "class");
+        queryParams.put("015", query);
         return queryParams;
     }
 
-    public void doRequest() {
+    public void doRequest(String query) {
         response = given()
-                .queryParams(getQueryParams())
+                .queryParams(getQueryParams(query))
                 .when()
                 .get(URL_SEARCH);
     }
