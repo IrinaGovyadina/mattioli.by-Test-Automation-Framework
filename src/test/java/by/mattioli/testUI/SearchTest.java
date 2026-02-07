@@ -25,13 +25,13 @@ public class SearchTest {
     }
 
     @Test
-    public void testSearchTitle() {
+    public void test3() {
         logger.info("Выполняется проверка заголовка строки поиска");
         Assertions.assertEquals("Поиск товара", searchPage.getSearchBarTitle());
     }
 
     @Test
-    public void testSearchInvalidData() {
+    public void test() {
         logger.info("Выполняется тест строки поиска с неверно введенными данными");
         searchPage.inputSearchBar("сумка");
         searchPage.getMessageOfFoundProduct();
@@ -39,7 +39,7 @@ public class SearchTest {
     }
 
     @Test
-    public void testSearchValidDate() {
+    public void test2() {
         logger.info("Выполняется тест строки поиска с валидными данными");
         searchPage.inputSearchBar("015");
         searchPage.getMessageOfFoundProduct();
