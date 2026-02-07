@@ -35,7 +35,7 @@ public class SearchPage {
     public String getMessageOfFoundProduct() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(SearchLocator.SEARCH_BAR_RESULT_TEXT));
-        logger.info("Выводится сообщение о найденном продукте");
+        logger.info("Выводится сообщение о найденном товаре");
         return element.getText();
     }
 }
