@@ -14,6 +14,7 @@ public class LoginTestAPI {
     @Test
     public void testLogin() {
         LoginServise loginServise = new LoginServise();
+        logger.info("Проверка входа с невалидными данными");
         loginServise.doRequest("test@test.com", "123456+");
         loginServise.printResponse();
 
@@ -21,6 +22,6 @@ public class LoginTestAPI {
                 () -> assertEquals(200, loginServise.getStatusCode()),
                 () -> assertEquals("Неверно указан телефон, логин, email или пароль", loginServise.getResponseMessage())
         );
-    logger.info("Тест авторизации успешно завершен");
+        logger.info("Тест авторизации успешно завершен");
     }
 }
