@@ -1,4 +1,1 @@
-
-Учебный проект по автоматизации тестирования сайта mattioli.by включающий реализацию UI и API.
-
-Автор: Говядина Ирина
+[Testirovanie-stroki-poiska-na-Java-effektivnye-metody-i-prakticheskie-primery.docx](https://github.com/user-attachments/files/25160644/Testirovanie-stroki-poiska-na-Java-effektivnye-metody-i-prakticheskie-primery.docx)
