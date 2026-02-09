@@ -24,24 +24,24 @@ API-интерфейсы
 **Технологии и фреймворки**
 
 Сборка
-Maven
+- Maven
 
 Язык 
-Java
+- Java
 
 **Библиотеки** 
 
-. Selenium WebDrive
-. Rest Assured
-. JUnit5
+- Selenium WebDrive
+- Rest Assured
+- JUnit5
 
 **Паттерны**
 
-. Page Object
-. Singleton
+- Page Object
+- Singleton
 
 **Дополнительно** 
 
-. Log4j2 для логирования
-. Jenkins для CI/CD
+- Log4j2 для логирования
+- Jenkins для CI/CD
 
