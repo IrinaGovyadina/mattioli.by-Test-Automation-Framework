@@ -33,6 +33,6 @@ Maven				Java
 
 Дополнительно
 
-   Log4j2 для логирования
-   Jenkins для CI/CD
+ - Log4j2 для логирования
+ - Jenkins для CI/CD
 
