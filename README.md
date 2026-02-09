@@ -24,15 +24,16 @@ API-интерфейсы
 
 Maven				Java
 
-
-Библиотеки						Паттерны
-
-  Selenium WebDrive  				  Page Object	
-   Rest Assured  						  Singleton
-  JUnit5
+Библиотеки						
+- Selenium WebDrive  				  
+- Rest Assured  						  
+- JUnit5
+  
+Паттерны
+- Page Object	
+- Singleton
 
 Дополнительно
 
- - Log4j2 для логирования
- - Jenkins для CI/CD
-
+- Log4j2 для логирования
+- Jenkins для CI/CD
