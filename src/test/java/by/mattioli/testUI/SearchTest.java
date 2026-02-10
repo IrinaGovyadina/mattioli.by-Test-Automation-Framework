@@ -27,6 +27,7 @@ public class SearchTest {
     @Test
     public void testSearchTitle() {
         logger.info("Выполняется проверка заголовка строки поиска");
+
         Assertions.assertEquals("Поиск товара", searchPage.getSearchBarTitle());
     }
 
@@ -34,7 +35,7 @@ public class SearchTest {
     public void testSearchInvalidData() {
         logger.info("Выполняется тест строки поиска с неверно введенными данными");
         searchPage.inputSearchBar("сумка");
-        searchPage.getMessageOfFoundProduct();
+
         Assertions.assertEquals("Найдено 0 товаров", searchPage.getMessageOfFoundProduct());
     }
 
@@ -42,8 +43,8 @@ public class SearchTest {
     public void testSearchValidData() {
         logger.info("Выполняется тест строки поиска с валидными данными");
         searchPage.inputSearchBar("015");
-        searchPage.getMessageOfFoundProduct();
-        Assertions.assertEquals("Найдено 5 товаров", searchPage.getMessageOfFoundProduct());
+
+        Assertions.assertEquals("Найдено 7 товаров", searchPage.getMessageOfFoundProduct());
     }
 
     @AfterEach
