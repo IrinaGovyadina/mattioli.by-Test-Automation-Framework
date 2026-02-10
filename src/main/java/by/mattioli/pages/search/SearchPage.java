@@ -24,10 +24,16 @@ public class SearchPage {
     }
 
     public void SearchBarClick() {
+        //WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        // Ждем, пока кнопка станет реально доступной для клика (не перекрытой)
+      //  WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(SearchLocator.BUTTON_CLICK_SEARCH_BAR));
+      //  searchButton.click();
         driver.findElement(SearchLocator.BUTTON_CLICK_SEARCH_BAR).click();
     }
 
     public void inputSearchBar(String search) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(SearchLocator.SEARCH_BAR_FOUND_TEXT)).click();
        logger.info("Ввводим данные в строку поиска");
         driver.findElement(SearchLocator.SEARCH_BAR_FOUND_TEXT).sendKeys(search);
     }
