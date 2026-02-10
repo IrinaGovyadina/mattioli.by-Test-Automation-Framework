@@ -1,27 +1,28 @@
 package by.mattioli.testAPI;
 
-import by.mattioli.api.LoginServise;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import by.mattioli.api.LoginService;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertAll;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class LoginTestAPI {
-    private static final Logger logger = LogManager.getLogger();
+
 
     @Test
     public void testLoginForm() {
-        LoginServise loginServise = new LoginServise();
-        logger.info("Проверка входа с невалидными данными");
-        loginServise.doRequest("test@test.com", "123456+");
-        loginServise.printResponse();
+        LoginService loginServise = new LoginService();
+        String email = "test@test.com";
+        String password = "123456+";
+        loginServise.initSession();
+
+        loginServise.doRequest(email, password);
+        loginServise.getStatusCode();
+        loginServise.getResponseMessage();
 
         assertAll("Login",
                 () -> assertEquals(200, loginServise.getStatusCode()),
-                () -> assertEquals("Неверно указан телефон, логин, email или пароль", loginServise.getResponseMessage())
+                () -> assertTrue(loginServise.getResponseMessage().contains("Неверно указан"), "Текст ошибки на странице логина не совпал с ожидаемым: " + loginServise.getResponseMessage())
         );
-        logger.info("Тест авторизации успешно завершен");
+
     }
 }

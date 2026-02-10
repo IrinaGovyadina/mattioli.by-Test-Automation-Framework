@@ -39,7 +39,7 @@ public class SearchTest {
     }
 
     @Test
-    public void testSearchValidDate() {
+    public void testSearchValidData() {
         logger.info("Выполняется тест строки поиска с валидными данными");
         searchPage.inputSearchBar("015");
         searchPage.getMessageOfFoundProduct();
