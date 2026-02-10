@@ -16,8 +16,13 @@ public class Driver {
 
     public static WebDriver getDriver() {
         if (driver == null) {
-            driver = new ChromeDriver();
-            driver.manage().window().maximize();
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--window-size=1920,1080"); // Вместо maximize
+            options.addArguments("--disable-notifications");
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
+            driver = new ChromeDriver(options);
+           // driver.manage().window().maximize();
             logger.info("Создали хром-драйвер");
         }
         return driver;
