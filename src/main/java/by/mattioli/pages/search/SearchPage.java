@@ -13,14 +13,16 @@ import java.time.Duration;
 public class SearchPage {
     private static final Logger logger = LogManager.getLogger();
     private WebDriver driver;
+    private static final int DEFAULT_DURATION_OF_SECONDS = 10;
 
     public SearchPage() {
         this.driver = Driver.getDriver();
     }
 
     public String getSearchBarTitle() {
-        logger.info("Получаем заголовок строки поиска");
-        return driver.findElement(SearchLocator.SEARCH_BAR_TITLE).getAttribute("placeholder");
+        String titleSearchBar = driver.findElement(SearchLocator.SEARCH_BAR_TITLE).getAttribute("placeholder");
+        logger.info("Получаем заголовок строки поиска: " + titleSearchBar);
+        return titleSearchBar;
     }
 
     public void SearchBarClick() {
@@ -28,16 +30,17 @@ public class SearchPage {
     }
 
     public void inputSearchBar(String search) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        logger.info("Ввводим данные в строку поиска");
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(DEFAULT_DURATION_OF_SECONDS));
         wait.until(ExpectedConditions.elementToBeClickable(SearchLocator.SEARCH_BAR_FOUND_TEXT)).click();
-       logger.info("Ввводим данные в строку поиска");
         driver.findElement(SearchLocator.SEARCH_BAR_FOUND_TEXT).sendKeys(search);
     }
 
     public String getMessageOfFoundProduct() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(DEFAULT_DURATION_OF_SECONDS));
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(SearchLocator.SEARCH_BAR_RESULT_TEXT));
-        logger.info("Выводится сообщение о найденном товаре");
-        return element.getText();
+        String messageOfFoundProduct = element.getText();
+        logger.info("Выводится сообщение о найденном товаре: " + messageOfFoundProduct);
+        return messageOfFoundProduct;
     }
 }

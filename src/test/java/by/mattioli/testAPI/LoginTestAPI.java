@@ -16,12 +16,10 @@ public class LoginTestAPI {
         loginServise.initSession();
 
         loginServise.doRequest(email, password);
-        loginServise.getStatusCode();
-        loginServise.getResponseMessage();
 
         assertAll("Login",
                 () -> assertEquals(200, loginServise.getStatusCode()),
-                () -> assertTrue(loginServise.getResponseMessage().contains("Неверно указан"), "Текст ошибки на странице логина не совпал с ожидаемым: " + loginServise.getResponseMessage())
+                () -> assertEquals("Неверно указан телефон, логин, email или пароль", loginServise.getResponseMessage())
         );
 
     }

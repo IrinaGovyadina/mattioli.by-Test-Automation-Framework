@@ -31,18 +31,18 @@ public class LoginTest {
         loginPage.inputEmail("test@test.com");
         loginPage.inputPassword("987456");
         loginPage.putButtonEnter();
-        loginPage.getErrorMessage();
+
         Assertions.assertEquals("Неверно указан телефон, логин, email или пароль", loginPage.getErrorMessage());
     }
 
     @Test
-    public void testLoginFormEmpty(){
+    public void testLoginFormEmpty() {
         logger.info("Проверка входа в личный кабинет с пустыми полями логина и пароля");
         loginPage.clickOnLoginWithPassword();
         loginPage.inputEmail("");
         loginPage.inputPassword("");
         loginPage.putButtonEnter();
-        loginPage.getErrorMessage();
+
         Assertions.assertEquals("Не указан телефон, логин или email", loginPage.getErrorMessage());
     }
 

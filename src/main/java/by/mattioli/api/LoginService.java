@@ -80,7 +80,8 @@ public class LoginService {
     }
 
     public String getResponseMessage() {
-        logger.info("Сообщение об ошибке");
-        return response.jsonPath().getString("error.msg");
+        String message = response.jsonPath().getString("error.msg");
+        logger.info("Сообщение об ошибке: " + message);
+        return message;
     }
 }

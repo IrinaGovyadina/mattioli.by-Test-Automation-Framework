@@ -8,4 +8,3 @@ public class HomeLocator {
     public static final By ACCEPT_COOKIES = By.xpath("//div[@class='cookie-notification__control js-cookie-notification-close']");
     public static final By NAME_COMPANY_FOOTER = By.xpath("//div[@class='footer__description']");
 }
-//div[@class='header-panel__title']

@@ -11,8 +11,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class LoginPage {
-   private static final Logger logger = LogManager.getLogger();
+    private static final Logger logger = LogManager.getLogger();
     private WebDriver driver;
+    private static final int DEFAULT_DURATION_OF_SECONDS = 10;
 
     public LoginPage() {
         this.driver = Driver.getDriver();
@@ -37,9 +38,10 @@ public class LoginPage {
     }
 
     public String getErrorMessage() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(DEFAULT_DURATION_OF_SECONDS));
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(LoginLocator.ERROR_MESSAGE_PATH));
-        logger.info("Выводится сообщение об ошибке");
-        return element.getText();
+        String message = element.getText();
+        logger.info("Выводится сообщение об ошибке: " + message);
+        return message;
     }
 }
